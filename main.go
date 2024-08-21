@@ -1,12 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	url, err := normalizeURL("https://blog.boot.dev/path/")
-	if err != nil {
-		fmt.Println(err)
+	argsWithoutProg := os.Args[1:]
+	if len(argsWithoutProg) < 1 {
+		fmt.Println("no website provided")
+		os.Exit(1)
+	} else if len(argsWithoutProg) > 1 {
+		fmt.Println("too many arguments provided")
+		os.Exit(1)
+	} else {
+		fmt.Printf("starting crawl of: %s\n", argsWithoutProg[0])
 	}
-
-	fmt.Println(url)
 }
