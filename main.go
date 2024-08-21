@@ -17,10 +17,5 @@ func main() {
 		fmt.Printf("starting crawl of: %s\n", argsWithoutProg[0])
 	}
 
-	html, err := getHTML("https://wikipedia.org")
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(html)
-	}
+	crawlPage(argsWithoutProg[0], argsWithoutProg[0], map[string]int{})
 }

@@ -19,7 +19,7 @@ func getURLsFromHTML(htmlBody, rawBaseURL string) ([]string, error) {
 	for i, link := range result {
 		u, err := url.Parse(link)
 		if err != nil || !u.IsAbs() {
-			result[i] = rawBaseURL + link
+			result[i] = strings.TrimSuffix(rawBaseURL, "/") + link
 		}
 	}
 	return result, nil
