@@ -1,9 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	fmt.Println("Hello, World!")
+	url, err := normalizeURL("https://blog.boot.dev/path/")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(url)
 }
