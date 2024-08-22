@@ -47,6 +47,5 @@ func main() {
 	go cfg.crawlPage(argsWithoutProg[0])
 
 	cfg.wg.Wait()
-	fmt.Println("crawling finished")
 	printReport(cfg.pages, argsWithoutProg[0])
 }

@@ -14,4 +14,6 @@ func printReport(pages map[string]int, baseURL string) {
 	for _, value := range sortedMap {
 		fmt.Printf("Found %d internal links to %s \n", value.value, value.key)
 	}
+
+	fmt.Println("crawling finished")
 }

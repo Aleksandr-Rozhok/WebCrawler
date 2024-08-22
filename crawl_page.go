@@ -27,7 +27,7 @@ func (cfg *config) crawlPage(rawCurrentURL string) {
 
 	parsedRawCurrentURL, err := url.Parse(rawCurrentURL)
 	if err != nil {
-		fmt.Printf("Ошибка парсинга URL 1: %s : %v", rawCurrentURL, err)
+		fmt.Printf("Error parsing of URL 1: %s : %v", rawCurrentURL, err)
 		return
 	}
 
@@ -61,7 +61,6 @@ func (cfg *config) crawlPage(rawCurrentURL string) {
 
 		for _, nextURL := range urls {
 			cfg.wg.Add(1)
-			fmt.Println(nextURL)
 			go cfg.crawlPage(nextURL)
 		}
 
