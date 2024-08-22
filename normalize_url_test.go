@@ -35,7 +35,7 @@ func TestNormalizeURL(t *testing.T) {
 				return
 			}
 			if actual != tc.expected {
-				t.Errorf("Test %v - %s FAIL: expected URL: %v, actual: %v", i, tc.name, tc.expected, actual)
+				t.Errorf("Test %v - '%s' FAIL: expected '%s', got '%s'", i, tc.name, tc.expected, actual)
 			}
 		})
 	}
